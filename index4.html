@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Morphing Page Transition | Demo 4 | Codrops</title>
+		<meta name="description" content="A page transition where one SVG path is morphed into another" />
+		<meta name="keywords" content="page transition, svg, morph, path, javascript, web design, web dev" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="favicon.ico">
+		<link href="https://fonts.googleapis.com/css?family=Nunito:400,700|Poppins" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="pater/pater.css" />
+		<script>document.documentElement.className = 'js';</script>
+	</head>
+	<body class="demo-4 loading">
+		<svg class="hidden">
+			<symbol id="icon-arrow" viewBox="0 0 24 24">
+				<title>arrow</title>
+				<polygon points="6.3,12.8 20.9,12.8 20.9,11.2 6.3,11.2 10.2,7.2 9,6 3.1,12 9,18 10.2,16.8 "/>
+			</symbol>
+			<symbol id="icon-drop" viewBox="0 0 24 24">
+				<title>drop</title>
+				<path d="M12,21c-3.6,0-6.6-3-6.6-6.6C5.4,11,10.8,4,11.4,3.2C11.6,3.1,11.8,3,12,3s0.4,0.1,0.6,0.3c0.6,0.8,6.1,7.8,6.1,11.2C18.6,18.1,15.6,21,12,21zM12,4.8c-1.8,2.4-5.2,7.4-5.2,9.6c0,2.9,2.3,5.2,5.2,5.2s5.2-2.3,5.2-5.2C17.2,12.2,13.8,7.3,12,4.8z"/><path d="M12,18.2c-0.4,0-0.7-0.3-0.7-0.7s0.3-0.7,0.7-0.7c1.3,0,2.4-1.1,2.4-2.4c0-0.4,0.3-0.7,0.7-0.7c0.4,0,0.7,0.3,0.7,0.7C15.8,16.5,14.1,18.2,12,18.2z"/>
+			</symbol>
+			<symbol id="icon-github" viewBox="0 0 32.6 31.8">
+				<title>github</title>
+				<path d="M16.3,0C7.3,0,0,7.3,0,16.3c0,7.2,4.7,13.3,11.1,15.5c0.8,0.1,1.1-0.4,1.1-0.8c0-0.4,0-1.4,0-2.8c-4.5,1-5.5-2.2-5.5-2.2c-0.7-1.9-1.8-2.4-1.8-2.4c-1.5-1,0.1-1,0.1-1c1.6,0.1,2.5,1.7,2.5,1.7c1.5,2.5,3.8,1.8,4.7,1.4c0.1-1.1,0.6-1.8,1-2.2c-3.6-0.4-7.4-1.8-7.4-8.1c0-1.8,0.6-3.2,1.7-4.4C7.4,10.7,6.8,9,7.7,6.8c0,0,1.4-0.4,4.5,1.7c1.3-0.4,2.7-0.5,4.1-0.5c1.4,0,2.8,0.2,4.1,0.5c3.1-2.1,4.5-1.7,4.5-1.7c0.9,2.2,0.3,3.9,0.2,4.3c1,1.1,1.7,2.6,1.7,4.4c0,6.3-3.8,7.6-7.4,8c0.6,0.5,1.1,1.5,1.1,3c0,2.2,0,3.9,0,4.5c0,0.4,0.3,0.9,1.1,0.8c6.5-2.2,11.1-8.3,11.1-15.5C32.6,7.3,25.3,0,16.3,0z"/>
+			</symbol>
+		</svg>
+		<main>
+			<div class="frame frame--fixed">
+				<header class="codrops-header">
+					<div class="codrops-links">
+						<a class="codrops-icon codrops-icon--prev" href="https://tympanus.net/Development/MenuHoverEffects/" title="Previous Demo"><svg class="icon icon--arrow"><use xlink:href="#icon-arrow"></use></svg></a>
+						<a class="codrops-icon codrops-icon--drop" href="https://tympanus.net/codrops/?p=31976" title="Back to the article"><svg class="icon icon--drop"><use xlink:href="#icon-drop"></use></svg></a>
+					</div>
+					<h1 class="codrops-header__title">Morphing Page Transition</h1>
+				</header>
+				<a class="github" href="https://github.com/codrops/MorphingPageTransition/" title="Find this project on GitHub"><svg class="icon icon--github"><use xlink:href="#icon-github"></use></svg></a>
+				<nav class="demos">
+					<a class="demo" href="index.html"><span>Demo 1</span></a>
+					<a class="demo" href="index2.html"><span>Demo 2</span></a>
+					<a class="demo" href="index3.html"><span>Demo 3</span></a>
+					<a class="demo demo--current" href="index4.html"><span>Demo 4</span></a>
+				</nav>
+			</div>
+			<div class="content content--intro">
+				<div class="content__inner">
+					<h2 class="content__title">Southeast Asia</h2>
+					<h3 class="content__subtitle">History, Culture &amp; Destinations</h3>
+					<a href="#" class="enter">Start your journey</a>
+					<a class="pater" href="https://goo.gl/rdSoMC" onClick="recordOutboundLink(this, 'Outbound Links', 'PageCloud08082017');return false;">
+						<div class="pater__sponsor"><span>Sponsored by</span> <img class="pater__logo" src="pater/PageCloud_logo.png" alt="PageCloud" /></div>
+						<img class="pater__img" src="pater/phone.png" alt="Phone with theme" />
+						<h3 class="pater__title"> <span>Build a website.</span> <span>Create it. Change it.</span></h3>
+						<p class="pater__description">The website creator you'll love to use.</p>
+					</a>
+				</div>
+				<div class="shape-wrap">
+					<svg class="shape" width="100%" height="100vh" preserveAspectRatio="none" viewBox="0 0 1440 800" xmlns:pathdata="http://www.codrops.com/">
+						<path d="M -30.45,-43.86 -30.45,0 53.8,0 53.8,0 179.5,0 179.5,0 193.3,0 193.3,0 253.1,0 253.1,0 276.1,0 276.1,0 320.6,0 320.6,0 406.5,0 406.5,0 435.6,0 435.6,0 477,0 477,0 527.6,0 527.6,0 553.7,0 553.7,0 592,0 592,0 742.3,0 742.3,0 762.2,0 762.2,0 776,0 776,0 791.3,0 791.3,0 852.7,0 852.7,0 871.1,0 871.1,0 878.7,0 878.7,0 891,0 891,0 923.2,0 923.2,0 940.1,0 940.1,0 976.9,0 976.9,0 1031,0 1031,0 1041,0 1041,0 1176,0 1176,0 1192,0 1192,0 1210,0 1210,0 1225,0 1225,0 1236,0 1236,0 1248,0 1248,0 1273,0 1273,0 1291,0 1291,0 1316,0 1316,0 1337,0 1337,0 1356,0 1356,0 1414,0 1414,0 1432,0 1432,0 1486,0 1486,-43.86 Z" pathdata:id="M -30.45,-57.86 -30.45,442.6 53.8,443.8 53.8,396.3 179.5,396.3 179.5,654.7 193.3,654.7 193.3,589.1 253.1,589.1 253.1,561.6 276.1,561.6 276.1,531.2 320.6,531.2 320.6,238.6 406.5,238.6 406.5,213.9 435.6,213.9 435.6,246.2 477,246.2 477,289.9 527.6,289.9 527.6,263.3 553.7,263.3 553.7,280.4 592,280.4 592,189.2 742.3,189.2 742.3,259.5 762.2,259.5 762.2,103.7 776,103.7 776,77.11 791.3,77.11 791.3,18.21 852.7,18.21 852.7,86.61 871.1,86.61 871.1,231 878.7,240.5 878.7,320.3 891,320.3 891,434.3 923.2,434.3 923.2,145.5 940.1,145.5 940.1,117 976.9,117 976.9,139.8 1031,139.8 1031,284.2 1041,284.2 1041,242.4 1176,242.4 1176,282.3 1192,282.3 1192,641.4 1210,641.4 1210,692.7 1225,692.7 1225,599.6 1236,599.6 1236,527.4 1248,527.4 1248,500.8 1273,500.8 1273,523.6 1291,523.6 1291,652.8 1316,652.8 1316,533.1 1337,533.1 1337,502.7 1356,502.7 1356,523.6 1414,523.6 1414,491.3 1432,491.3 1432,523.6 1486,523.6 1486,-57.86 Z"></path>
+					</svg>
+				</div>
+			</div><!-- /content -->
+			<div class="content content--fixed">
+				<div class="content__inner">
+					<h2 class="content__title content__title--filled">Bangkok</h2>
+					<a href="#" class="explore">Explore</a>
+				</div>
+			</div>
+			<script src="js/imagesloaded.pkgd.min.js"></script>
+			<script src="js/charming.min.js"></script>
+			<script src="js/anime.min.js"></script>
+			<script src="js/demo4.js"></script>
+		</main>
+	</body>
+</html>

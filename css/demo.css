@@ -1,0 +1,500 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Nunito', sans-serif;
+	min-height: 100vh;
+	color: #57585c;
+	color: var(--color-text);
+	background-color: #fff;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Color schemes */
+.demo-1 {
+	--color-text: #fff;
+	--color-link: #5f5f5f;
+	--color-link-hover: #ff963b;
+	--color-enter: #fff;
+	--color-title: #fff;
+	--color-subtitle: #5f5f5f;
+	--color-menu-item: #000;
+	--color-menu-item-hover: #ff963b;
+	--color-menu-item-hover-alt: #8544da;
+	--color-content: #222325;
+	--color-content-fixed: #ddd;
+	--font-alt: 200 6vw/1 'Spectral', serif;
+	--color-next: #5f5f5f;
+	--color-next-hover: #8544da;
+}
+
+.demo-2 {
+	--color-text: #fff;
+	--color-link: #002068;
+	--color-link-hover: #d8d1d1;
+	--color-enter: #ecec11;
+	--color-title: #ffffff;
+	--color-subtitle: #002068;
+	--color-menu-item: #fff;
+	--color-menu-item-hover: #000;
+	--color-menu-item-hover-alt: #000;
+	--color-content: #013bbb;
+	--color-content-fixed: #ddd;
+	--font-alt: 400 6vw/1 'Fugaz One', serif;
+	--color-next: #fff;
+	--color-next-hover: #000;
+}
+
+.demo-3 {
+	--color-text: #fff;
+	--color-link: #4c0a75;
+	--color-link-hover: #f470d2;
+	--color-enter: #f470d2;
+	--color-title: #ffffff;
+	--color-subtitle: #4c0a75;
+	--color-menu-item: #000;
+	--color-menu-item-hover: #4c0a75;
+	--color-menu-item-hover-alt: #8544da;
+	--color-content: #ffb4ec;
+	--color-content-fixed: #ddd;
+	--font-alt: 400 6vw/1 'Chewy', serif;
+	--color-next: #fff;
+	--color-next-hover: #000;
+}
+
+.demo-4 {
+	--color-text: #4b2cf2;
+	--color-link: #ec2525;
+	--color-link-hover: #fff;
+	--color-enter: #4b2cf2;
+	--color-title: #ffffff;
+	--color-subtitle: #ec2525;
+	--color-content: #1c1b1b;
+	--font-alt: 400 5vw/1 'Poppins', serif;
+}
+
+/* Page Loader */
+.js .loading::before {
+	content: '';
+	position: fixed;
+	z-index: 10000;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #ccd8e4;
+	background: var(--color-content);
+}
+
+.js .loading::after {
+	content: '';
+	position: fixed;
+	z-index: 10000;
+	top: 50%;
+	left: 50%;
+	width: 50px;
+	height: 50px;
+	margin: -25px 0 0 -25px;
+	pointer-events: none;
+	background: #333;
+	background: var(--color-text);
+	border-radius: 50%;
+	animation: loaderAnim 0.5s ease infinite alternate forwards;
+}
+
+@keyframes loaderAnim {
+	0% {
+		transform: scale3d(0.5,0.5,1);
+	}
+	100% {
+		transform: scale3d(1,1,1);
+	}
+}
+
+a {
+	text-decoration: none;
+	color: #5d93d8;
+	color: var(--color-link);
+	outline: none;
+}
+
+a:hover,
+a:focus {
+	color: #423c2b;
+	color: var(--color-link-hover);
+	outline: none;
+}
+
+.hidden {
+	position: absolute;
+	overflow: hidden;
+	width: 0;
+	height: 0;
+	pointer-events: none;
+}
+
+/* Icons */
+.icon {
+	display: block;
+	width: 1.5em;
+	height: 1.5em;
+	margin: 0 auto;
+	fill: currentColor;
+}
+
+.icon--arrow-right {
+	transform: scale3d(-1,-1, 1);
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 0.5em;
+}
+
+.frame {
+	position: absolute;
+	z-index: 10000;
+	top: 0;
+	left: 0;
+	display: grid;
+	align-content: space-between;
+	width: 100%;
+	max-width: none;
+	height: 100vh;
+	padding: 1.5em;
+	pointer-events: none;
+	grid-template-columns: 50% 50%;
+	grid-template-rows: auto auto 4em;
+	grid-template-areas: 'header ...'
+	'... ...'
+	'github demos';
+}
+
+.frame a {
+	pointer-events: auto;
+}
+
+/* Header */
+.codrops-header {
+	position: relative;
+	z-index: 100;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	align-items: center;
+	align-self: start;
+	grid-area: header;
+	justify-self: start;
+}
+
+.codrops-header__title {
+	font-size: 1em;
+	font-weight: normal;
+	margin: 0;
+	padding: 0.75em 0;
+}
+
+.info {
+	margin: 0 0 0 1.25em;
+	font-style: italic;
+	color: var(--color-link);
+}
+
+.github {
+	display: block;
+	align-self: end;
+	grid-area: github;
+	justify-self: start;
+}
+
+.demos {
+	position: relative;
+	display: block;
+	align-self: end;
+	text-align: center;
+	grid-area: demos;
+	display: block;
+	justify-self: end;
+}
+
+.demo {
+	padding: 0 0.15em;
+}
+
+.demo:not(:last-child) {
+	margin-right: 1em;
+}
+
+.demo span {
+	white-space: nowrap;
+	pointer-events: none;
+}
+
+a.demo--current {
+	pointer-events: none;
+	color: var(--color-text);
+}
+
+/* Top Navigation Style */
+.codrops-links {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	margin: 0 1em 0 0;
+	text-align: center;
+	white-space: nowrap;
+}
+
+.codrops-icon {
+	display: inline-block;
+	margin: 0.15em;
+	padding: 0.25em;
+}
+
+/* Page transitions */
+main {
+	height: 100vh;
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+}
+
+.content {
+	width: 100%;
+	height: 100vh;
+	position: relative;
+}
+
+.content--intro {
+	z-index: 100;
+	height: 200vh;
+}
+
+.content--fixed {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: var(--color-content-fixed);
+	/* background-image: var(--bg-img); */
+	/* can't use this as relative path until it's fixed in Chrome https://bugs.chromium.org/p/chromium/issues/detail?id=618165 */
+	background-position: 50% 50%;
+	background-size: cover;
+}
+
+.demo-1 .content--fixed {
+	background-image: url(../img/bg1.jpg);
+}
+
+.demo-2 .content--fixed {
+	background-image: url(../img/bg2.jpg);
+}
+
+.demo-3 .content--fixed {
+	background-image: url(../img/bg3.jpg);
+}
+
+.demo-4 .content--fixed {
+	background-image: url(../img/bg4.jpg);
+}
+
+.content__inner {
+	width: 100%;
+	height: 100vh;
+	position: relative;
+	text-align: center;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.content--intro .content__inner {
+	background: var(--color-content);
+}
+
+.content h2 {
+	margin: 0;
+}
+
+.shape-wrap {
+	position: relative;
+	z-index: 10;
+	margin: -5px 0 0 0; /* Hide the gap */
+}
+
+.shape {
+	height: 100vh;
+	width: 100%;
+	display: block;
+	fill: var(--color-content);
+}
+
+.content__title {
+	font: var(--font-alt);
+	color: var(--color-title);
+	margin: 0;
+	line-height: 1;
+}
+
+.content__title--filled {
+	background: var(--color-content);
+	padding: 0.25em 0.5em;
+}
+
+.content__title span {
+	display: inline-block;
+}
+
+.content__subtitle {
+	font: var(--font-alt);
+	font-size: 1.5em;
+	color: var(--color-subtitle);
+	padding: 0.5em 0 0 0;
+	margin: 0;
+}
+
+.enter, .explore {    
+	margin: 6vh 0 0 0;
+	font-size: 1em;
+	letter-spacing: 3px;
+	cursor: pointer;
+	font-weight: bold;
+	white-space: pre;
+	color: var(--color-enter);
+	pointer-events: auto;
+}
+
+.enter:hover,
+.enter:focus {    
+	color: var(--color-enter);
+}
+
+.enter span {
+	display: inline-block;
+}
+
+.explore {
+	background: var(--color-subtitle);
+	color: var(--color-title);
+	padding: 0.5em 1em;
+}
+
+.explore:hover,
+.explore:focus {    
+	background: var(--color-text);
+}
+
+.menu {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.menu__item {
+	font: var(--font-alt);
+	font-size: 3vw;
+	color: var(--color-menu-item);
+	margin: 0 1em;
+	position: relative;
+	line-height: 1;
+}
+
+.menu__item:hover,
+.menu__item:focus {
+	color: var(--color-menu-item-hover);
+}
+
+.menu__item:nth-child(2):hover {
+	color: var(--color-menu-item-hover-alt);
+}
+
+.demo-2 .menu__item {
+	pointer-events: none;
+	padding: 3em;
+}
+
+.demo-2 .menu__item span {
+	pointer-events: auto;
+}
+
+.content__text {
+	font-size: 1.85em;
+	max-width: 800px;
+	text-align: left;
+}
+
+.content__text a {
+	color: var(--color-menu-item);
+}
+
+.content__text a:hover, 
+.content__text a:focus {
+	color: var(--color-menu-item-hover);
+}
+
+.next-demo {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	margin: 1.5em 2em;
+	font-weight: bold;
+	color: var(--color-next);
+}
+
+.next-demo:hover,
+.next-demo:focus {
+	color: var(--color-next-hover);
+}
+
+@media screen and (max-width: 50em) {
+	.frame {
+		z-index: 1000;
+		display: block;
+		padding: 0.85em 0;
+	}
+	.demos {
+		font-size: 0.85em;
+		padding: 0 0.25em;
+	}
+	.codrops-header {
+		flex-direction: column;
+		align-items: center;
+		padding-top: 5em;
+	}
+	.codrops-header__title {
+		font-weight: bold;
+		padding-bottom: 0.25em;
+		text-align: center;
+	}
+	.github {
+		display: none;
+	}
+	.codrops-links {
+		margin: 0;
+	}
+	.content--intro .content__inner,
+	.demo-4 .content__inner {
+		padding-top: 12em;
+	}
+	.content__title {
+		font-size: 2em;
+	}
+	.demo {
+		padding: 0;
+		margin: 0;
+	}
+	.menu__item {
+		margin: 0.5em 0;
+		font-size: 1.5em;
+	}
+	.content__text {
+		padding: 1em;
+		font-size: 1em;
+	}
+	.next-demo {
+		position: relative;
+	}
+}
